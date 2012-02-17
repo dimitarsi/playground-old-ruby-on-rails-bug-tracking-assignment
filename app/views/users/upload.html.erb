@@ -6,16 +6,19 @@
 <% end %>
 
 <% if session[:user].id == @user.id %>
-  <%= form_for([@user,@user.documents.build]) do |f| %>
+  
+  <%= form_for(
+                [@user,@user.documents.build],
+                :html => { :target => "hidden_iframe" }) do |f| %>
     
-    <%= f.file_field :url %>
-    <%= f.submit "Качи" %>
+  <%= f.file_field :url %>
+  <%= f.submit "Качи" %>
 
   <% end %>
 <% end %>
 
 <% if @user.documents.all.size > 0 %>
-  <ul>
+  <ul id="file_list">
   <% @user.documents.all.each do |d| %>
     <li>
       <a href="<%= d.url %>" target="_blank"><%= d.name %></a>
@@ -23,7 +26,10 @@
   <% end %>
   </ul>
 <% else %>
-  <p>
+  <p id="no_files">
     Нямате качени файлове!
   </p>
 <% end %>
+
+
+<iframe id="hidden_iframe" name="hidden_iframe" style="display:none"></iframe>

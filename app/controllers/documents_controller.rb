@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+  
   def arhive
     @all_documents = Document.all
     render 'arhive'
@@ -12,9 +13,11 @@ class DocumentsController < ApplicationController
     else
       flash[:of_track] = "Something went off the rails!"
     end
-    redirect_to users_path
+    render 'refresh_list', :locals => {
+                                        :user => User.where(:id => session[:user].id).first
+                                        }
+    #redirect_to users_path
   end
-  
   
   def upload_it file
     f_name = file[:url].original_filename
@@ -23,4 +26,5 @@ class DocumentsController < ApplicationController
     File.open(path,'wb') { |f| f.write(file[:url].read ) }
     Document.new :url => path.gsub('public',''), :name => f_name, :user_id => session[:user].id
   end
+  
 end

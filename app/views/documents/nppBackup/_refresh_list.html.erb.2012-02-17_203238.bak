@@ -1,0 +1,13 @@
+var $no_files = $("#no_files")
+
+if($no_files.length > 0) {
+  $no_files.after("<ul id='file_list'></ul>");
+  $no_files.remove();
+}
+
+var $file_list = $("#file_list")
+  $file_list.empty();
+ <% @user.documents.all.each do |d| %>
+    $file_list.append("<li><a href=\"<%= d.url %>\" target=\"_blank\"><%= d.name %></a></li>")
+  <% end %>
+  
