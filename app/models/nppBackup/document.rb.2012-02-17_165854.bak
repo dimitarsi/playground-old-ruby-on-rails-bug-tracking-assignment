@@ -1,0 +1,4 @@
+class Document < ActiveRecord::Base
+  validetes_presence_of :url, :name
+  belongs_to :user
+end

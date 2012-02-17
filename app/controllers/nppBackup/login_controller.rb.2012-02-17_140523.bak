@@ -1,0 +1,19 @@
+class LoginController < ApplicationController
+  skip_before_filter :require_logn
+  
+  def register
+    @user = User.new
+  end
+
+  def signin
+  end
+
+  def signout
+  end
+  
+  def create_user
+    @pa = params
+    #redirect_to login_signin_path
+  end
+
+end

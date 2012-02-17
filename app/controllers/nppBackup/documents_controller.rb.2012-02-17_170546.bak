@@ -1,0 +1,13 @@
+class DocumentsController < ApplicationController
+  def arhive
+  end
+  
+  def create
+    
+  end
+  
+  
+  def upload_it file
+    
+  end
+end

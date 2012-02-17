@@ -1,0 +1,16 @@
+﻿
+<%= form_for([@user,@user.documents.build]) do |f| %>
+  
+  <%= f.file_field :url %>
+  
+  <%= f.submit "Качи" %>
+
+<% end %>
+
+<ul>
+<%= @user_document.each do |d| %>
+  <li>
+    <a href="<%= d.url %> "><% d.name %></a>
+  </li>
+<% end %>
+</ul>

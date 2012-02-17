@@ -1,0 +1,16 @@
+﻿<%= form_tag 'reg_user', :action => 'create', :controlelr => :users do |f| %>
+  
+  <%= label :name, 'Потребителско име' %>
+  <%= text_field :name %> <br />
+  
+  <%= label :password, 'Парола' %>
+  <%= password_field :password %>
+
+  <%= label :password_confirmation, 'Потвърди паролата' %>
+  <%= password_field :password_confirmation %>
+  
+  <br />
+  
+  <%= submit %>
+  
+<% end %>

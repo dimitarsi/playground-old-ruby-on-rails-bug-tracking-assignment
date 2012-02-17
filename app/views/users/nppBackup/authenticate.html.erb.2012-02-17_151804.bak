@@ -1,0 +1,4 @@
+﻿<%= form_for({@new_document,:multipart => true }) do |f| %>
+
+
+<% end %>

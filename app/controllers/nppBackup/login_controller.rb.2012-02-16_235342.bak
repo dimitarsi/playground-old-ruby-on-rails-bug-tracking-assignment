@@ -1,0 +1,16 @@
+class LoginController < ApplicationController
+  def register
+    @user = User.new
+  end
+
+  def signin
+  end
+
+  def signout
+  end
+  
+  def create_user
+    redirect_to login_signin_path
+  end
+
+end

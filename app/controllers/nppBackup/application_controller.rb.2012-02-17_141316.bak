@@ -1,0 +1,10 @@
+class ApplicationController < ActionController::Base
+  protect_from_forgery
+  before_filter :require_login
+  
+  def require_login
+    if session[:user] || session[:user].empty?  then
+      redirect_to loginsignin__path
+    end
+  end
+end

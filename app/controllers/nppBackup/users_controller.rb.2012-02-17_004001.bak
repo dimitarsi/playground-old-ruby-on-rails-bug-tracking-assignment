@@ -1,0 +1,24 @@
+﻿class UsersController < ApplicationController
+  
+  def create
+    new_user = User.new(params[:user])
+    if(new_user.save) then
+      flash[:reg_success] = "Усяпешна регистрация"
+      redirect_to login_signin_path
+    else 
+      flash[:reg_fail]   = "Моля попълнете коректно формата за регистрация!"
+      redirect_to login_register_path
+    end
+  end
+  
+  def authenticate
+    @param = User.where(:name => params[:uname],
+                        :password => params[:password])
+    if @param.any? then
+        session[:user] = @param.first
+      else
+        flash[:login_fail] = "Неуспешна регистрация"
+    end
+  end
+
+end

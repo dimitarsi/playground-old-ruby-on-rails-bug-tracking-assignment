@@ -1,0 +1,9 @@
+class UsersController < ApplicationController
+  
+  def create
+  end
+  
+  def authenticate
+  end
+
+end

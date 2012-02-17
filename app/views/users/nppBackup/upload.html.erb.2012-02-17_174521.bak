@@ -1,0 +1,20 @@
+﻿<% flash.each do |f| %>
+  <%= f %>
+<% end %>
+<%= form_for([@user,@user.documents.build]) do |f| %>
+  
+  <%= f.file_field :url %>
+  <%= f.submit "Качи" %>
+
+<% end %>
+
+<ul>
+
+<%= Rails.root %>
+
+<%= @user.documents.each do |d| %>
+  <li>
+    <a href="/<%= Rails.root + d.url %>" target="_blank"><%= d.name %></a>
+  </li>
+<% end %>
+</ul>

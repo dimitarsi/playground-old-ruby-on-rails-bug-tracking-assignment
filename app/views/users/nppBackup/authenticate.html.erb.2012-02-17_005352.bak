@@ -1,0 +1,1 @@
+﻿HELLO USER <%= @super_u.name %>

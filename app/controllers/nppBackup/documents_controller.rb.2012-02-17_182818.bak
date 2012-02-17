@@ -1,0 +1,25 @@
+class DocumentsController < ApplicationController
+  def arhive
+  end
+  
+  def create
+    new_file = self.upload_it params[:document]
+    if new_file.valid? then
+      new_file.save
+      flash[:upload_success] = "Tukushot uspeshno ka4i file-a si!"
+    else
+      flash[:of_track] = "Something went off the rails!"
+    end
+    redirect_to users_upload_path
+  end
+  
+  
+  def upload_it file
+    f_name = file[:url].original_filename
+    directory = "public/data/user_"+session[:user].id
+    path = File.join(directory,f_name)
+    File.open(path,'wb') { |f| f.write(file[:url].read ) }
+    flash[:f_name] = f_name
+    Document.new :url => path, :name => f_name, :user_id => session[:user].id
+  end
+end

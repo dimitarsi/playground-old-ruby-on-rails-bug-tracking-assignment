@@ -1,0 +1,29 @@
+﻿<%= link_to "Изход", login_signout_path %><br />
+<%= link_to "Всички файлове", documents_arhive_path %><br />
+
+<% flash.each do |f| %>
+  <%= f %>
+<% end %>
+
+<%= form_for([@user,@user.documents.build]) do |f| %>
+  
+  <%= f.file_field :url %>
+  <%= f.submit "Качи" %>
+
+<% end %>
+
+
+
+<% if @user.documents.all.size > 0 %>
+  <ul>
+  <% @user.documents.all.each do |d| %>
+    <li>
+      <a href="<%= d.url %>" target="_blank"><%= d.name %></a>
+    </li>
+  <% end %>
+  </ul>
+<% else %>
+  <p>
+    Нямате качени файлове!
+  </p>
+<% end %>

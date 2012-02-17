@@ -1,0 +1,16 @@
+ï»¿<%= form_for(@user) do |f| %>
+  
+  <%= f.label :name, 'ÐŸÐ¾Ñ‚Ñ€ÐµÐ±Ð¸Ñ‚ÐµÐ»ÑÐºÐ¾ Ð¸Ð¼Ðµ' %>
+  <%= f.text_field :name %> <br />
+  
+  <%= f.label :password, 'ÐŸÐ°Ñ€Ð¾Ð»Ð°' %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, 'Ïîòâúðäè ïàðîëà' %>
+  <%= f.password_field :password_confirmation %>
+  
+  <br />
+  
+  <%= f.submit %>
+  
+<% end %>

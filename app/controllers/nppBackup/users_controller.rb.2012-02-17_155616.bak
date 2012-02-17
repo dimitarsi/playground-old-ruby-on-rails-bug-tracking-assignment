@@ -1,0 +1,34 @@
+﻿class UsersController < ApplicationController
+  skip_before_filter :require_login, :only => [:authenticate]
+  def create
+    new_user = User.new(params[:user])
+    if(new_user.save) then
+      flash[:reg_success] = "Усяпешна регистрация"
+      redirect_to login_signin_path
+    else 
+      flash[:reg_fail]   = "Моля попълнете коректно формата за регистрация!"
+      redirect_to login_register_path
+    end
+  end
+  
+  def authenticate
+    @param = User.where(:name => params[:uname],
+                        :password => params[:upass])
+    if @param.any? then
+        session[:user] = @param.first
+    #   @super_u = session[:user].id
+        
+        redirect_to upload_users_path
+      else
+        flash[:login_fail] = "Невалиден потребите/парола!"
+        redirect_to login_signin_path
+    end
+  end
+  
+  def show
+    @user = User.where(:password => session[:user].password, :name => sessoion[:user].name )
+    
+    render 'upload'
+  end
+
+end

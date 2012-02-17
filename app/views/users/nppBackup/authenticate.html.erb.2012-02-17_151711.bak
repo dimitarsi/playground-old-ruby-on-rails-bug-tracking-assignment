@@ -1,0 +1,5 @@
+﻿<% if session[:user] %>
+  USER IS LOGGED !
+  <% else %>
+  USER IN NOT LOGGED
+<% end %>

@@ -1,0 +1,5 @@
+<% @all_documents.each do |d| %>
+
+  <%= link_to d.name, d.url, :target => "_blank" %><br />
+
+<% end %>

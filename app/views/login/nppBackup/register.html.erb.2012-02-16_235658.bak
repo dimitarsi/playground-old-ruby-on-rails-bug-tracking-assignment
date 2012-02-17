@@ -1,0 +1,18 @@
+﻿<%= users_create_path %>
+
+<%= form_tag login_create_user_path do |f| %>
+  
+  <%= label :name, 'Потребителско име' %>
+  <%= text_field :name %> <br />
+  
+  <%= label :password, 'Парола' %>
+  <%= password_field :password %><br />
+
+  <%= label :password_confirmation, 'Потвърди паролата' %>
+  <%= password_field :password_confirmation %>
+  
+  <br />
+  
+  <%= submit 'Регистрирай се' %>
+  
+<% end %>

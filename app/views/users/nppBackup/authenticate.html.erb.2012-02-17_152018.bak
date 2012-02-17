@@ -1,0 +1,4 @@
+﻿<%= form_tag(:action => 'upload') do |f| %>
+  
+
+<% end %>

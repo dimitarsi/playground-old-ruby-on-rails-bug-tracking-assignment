@@ -1,0 +1,18 @@
+﻿<%= users_create_path %>
+
+<%= form_tag login_register_path do |f| %>
+  
+  <%= f.label :name, 'Потребителско име' %>
+  <%= f.text_field :name %> <br />
+  
+  <%= f.label :password, 'Парола' %>
+  <%= f.password_field :password %><br />
+
+  <%= f.label :password_confirmation, 'Потвърди паролата' %>
+  <%= f.password_field :password_confirmation %>
+  
+  <br />
+  
+  <%= f.submit %>
+  
+<% end %>

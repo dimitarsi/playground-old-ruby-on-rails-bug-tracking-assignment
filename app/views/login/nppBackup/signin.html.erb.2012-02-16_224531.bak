@@ -1,0 +1,10 @@
+
+
+<%= form_tag(login_authenticate_path) do |f| %>
+  
+  <%= text_field_tag :uname %><br />
+  <%= password_field_tag :upass %><br />
+  
+  <%= submit_tag 'Sing In' %>
+  
+<% end %>

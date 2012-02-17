@@ -1,0 +1,4 @@
+<% @all_documents.each do |d| %>
+
+
+<% end %>

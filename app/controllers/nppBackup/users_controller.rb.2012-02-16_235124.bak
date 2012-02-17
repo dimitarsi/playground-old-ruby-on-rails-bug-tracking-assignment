@@ -1,0 +1,9 @@
+class UsersController < ApplicationController
+  def create
+    @par = params
+  end
+
+  def authenticate
+  end
+
+end

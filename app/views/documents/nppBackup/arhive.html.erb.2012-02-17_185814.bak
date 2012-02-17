@@ -1,0 +1,8 @@
+﻿<%= link_to "", login_signout_path %>
+
+<% @all_documents.each do |d| %>
+  <p>
+  <%= link_to d.name, d.url, :target => "_blank" %>
+  <br /> by <em><%= link_to d.user.name, user_path(d.user), :target => "_blank" %></em>
+  </p>
+<% end %>

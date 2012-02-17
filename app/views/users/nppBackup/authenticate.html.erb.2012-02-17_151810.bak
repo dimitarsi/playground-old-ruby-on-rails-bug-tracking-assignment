@@ -1,0 +1,4 @@
+﻿<%= form_tag({@new_document,:multipart => true }) do |f| %>
+
+
+<% end %>

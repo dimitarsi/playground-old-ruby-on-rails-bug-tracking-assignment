@@ -1,0 +1,7 @@
+class ApplicationController < ActionController::Base
+  protect_from_forgery
+  befor_filter :require_login
+  
+  def require_login
+    if session[]
+end

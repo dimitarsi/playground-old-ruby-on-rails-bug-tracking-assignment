@@ -1,0 +1,17 @@
+class LoginController < ApplicationController
+  def register
+    
+  end
+
+  def signin
+  end
+
+  def signout
+  end
+  
+  def create_user
+    
+    #redirect_to login_signin_path
+  end
+
+end

@@ -1,0 +1,13 @@
+﻿
+ <strong>Вход<strong>
+<%= form_tag(login_authenticate_path) do |f| %>
+  
+  <%= label_tag :uname ,'Ime:' %>
+  <%= text_field_tag :uname %><br />
+  
+  <%= label_tag :uname ,'Parola:' %>
+  <%= password_field_tag :upass %><br />
+  
+  <%= submit_tag 'Sing In' %>
+  
+<% end %>

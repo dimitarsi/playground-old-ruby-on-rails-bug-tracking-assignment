@@ -1,0 +1,8 @@
+<h1>Login#signin</h1>
+<p>Find me in app/views/login/signin.html.erb</p>
+<%= form_tag(singin_login_path) do |f| %>
+  
+  <%= text_field_tag :uname %><br />
+  <%= password_field_tag :upass %><br />
+
+<% end %>

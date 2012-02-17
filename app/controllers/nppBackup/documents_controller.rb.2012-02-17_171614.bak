@@ -1,0 +1,23 @@
+class DocumentsController < ApplicationController
+  def arhive
+  end
+  
+  def create
+    new_file = self.upload_it params[:document]
+    if new_file.valide? then
+      new_file.save
+    else
+    
+    end
+  end
+  
+  
+  def upload_it file
+    f_name = file[:url].original_filename
+    directory = "public/data"
+    path = File.join(directory,f_name)
+    File.open(path,'wb') { |f| f.write(file[:url].read ) }
+    
+    Documents.new :url => path, :name => f_name, :user_id => file[:user_id]
+  end
+end

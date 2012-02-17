@@ -1,0 +1,15 @@
+﻿
+ <strong>Вход<strong>
+<%= form_tag(users_authenticate_path) do |f| %>
+  
+  <%= label_tag :uname ,'Ime:' %>
+  <%= text_field_tag :uname %><br />
+  <br />
+  <%= label_tag :uname ,'Parola:' %>
+  <%= password_field_tag :upass %><br />
+  
+  <%= submit_tag 'Sing In' %>
+  
+<% end %>
+<br />
+<%= link_to 'Нямате регистрация?', user_register_path %>

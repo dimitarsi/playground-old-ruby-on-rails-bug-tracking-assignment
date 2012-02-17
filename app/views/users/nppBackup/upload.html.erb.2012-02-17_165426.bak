@@ -1,0 +1,15 @@
+﻿
+<%= form_for([@user,@user.documents.build]) do |f| %>
+  
+  <%= f.file_field :url %>
+  
+  <%= f.submit "Качи" %>
+
+<% end %>
+
+<ul>
+<%= @user_document.each do |d| %>
+
+
+<% end %>
+</ul>

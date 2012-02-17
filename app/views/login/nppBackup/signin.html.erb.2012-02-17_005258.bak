@@ -1,0 +1,31 @@
+﻿<% if flash[:reg_success] %>
+  <%= flash[:reg_success] %>
+<% end %>
+
+<% if 
+flash[:login_fail]
+ %>
+  <%= 
+flash[:login_fail]
+ %>
+<% end %>
+
+<% if @super_u %>
+  USER ID : <%= @super_u %>
+  
+  <% end %>
+<br />
+<strong>Вход<strong>
+<%= form_tag(users_authenticate_path) do |f| %>
+  
+  <%= label_tag :uname ,'Ime:' %>
+  <%= text_field_tag :uname %><br />
+  <br />
+  <%= label_tag :uname ,'Parola:' %>
+  <%= password_field_tag :upass %><br />
+  
+  <%= submit_tag 'Sing In' %>
+  
+<% end %>
+<br />
+<%= link_to 'Нямате регистрация?', login_register_path %>

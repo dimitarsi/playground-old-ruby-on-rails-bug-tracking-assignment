@@ -1,0 +1,14 @@
+class LoginController < ApplicationController
+  def register
+  end
+
+  def signin
+  end
+
+  def signout
+  end
+  
+  def authenticate
+  end
+  
+end

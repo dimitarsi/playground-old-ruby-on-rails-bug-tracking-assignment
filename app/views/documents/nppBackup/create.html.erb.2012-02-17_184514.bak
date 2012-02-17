@@ -1,0 +1,5 @@
+<% params.each do |p| %>
+
+  <%= p %> <br />
+
+<% end %>

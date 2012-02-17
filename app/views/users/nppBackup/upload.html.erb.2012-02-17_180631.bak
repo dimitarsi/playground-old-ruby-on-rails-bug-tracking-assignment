@@ -1,0 +1,22 @@
+﻿<% flash.each do |f| %>
+  <%= f %>
+<% end %>
+<%= form_for([@user,@user.documents.build]) do |f| %>
+  
+  <%= f.file_field :url %>
+  <%= f.submit "Качи" %>
+
+<% end %>
+
+<% if @user.documents.filter { |f| !f.url.nil? }.size > 0 %>
+
+<ul>
+<%= @user.documents.each do |d| %>
+  <li>
+    <a href="/<%= d.url %>" target="_blank"><%= d.name %></a>
+  </li>
+<% end %>
+</ul>
+<% else %>
+  Нямате качени файлове!
+<% end %>

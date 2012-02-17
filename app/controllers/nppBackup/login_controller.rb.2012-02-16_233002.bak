@@ -1,0 +1,13 @@
+class LoginController < ApplicationController
+  def register
+    @user = Users.new
+  end
+
+  def signin
+  end
+
+  def signout
+  end
+  
+
+end
