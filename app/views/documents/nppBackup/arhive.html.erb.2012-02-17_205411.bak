@@ -1,6 +1,5 @@
 ﻿<%= link_to "Изход", login_signout_path %>
-<br />
-<%= link_to "Качи файл", users_path %>
+
 <% @all_documents.each do |d| %>
   <p>
   <%= link_to d.name, d.url, :target => "_blank" %>

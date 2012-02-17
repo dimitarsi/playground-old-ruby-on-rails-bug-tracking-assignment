@@ -9,8 +9,8 @@ if($no_files.length > 0) {
 var $file_list = $("#file_list",parent.window.document.body)
     $file_list.empty();
 
-<% user.documents.all.reverse.each do |d| %>
-    $file_list.append("<li><a href=\"<%= d.url %>\" target=\"_blank\"><img width=\"26px\" src=\"/assets/download.png\" /><%= d.name %></a></li>")
+<% user.documents.all.each do |d| %>
+    $file_list.append("<li><a href=\"<%= d.url %>\" target=\"_blank\"><img src="/assets/download.png"<%= d.name %></a></li>")
 <% end %>
 
 

@@ -1,0 +1,12 @@
+﻿<div class="form_wrapper">
+  <strong>Добави нов файл</strong>
+  <br />
+  <br />
+  <%= form_for(
+                [@user,@user.documents.build],
+                :html => { :target => "hidden_iframe" }) do |f| %>
+    
+  <%= f.file_field :url %>
+  <%= f.submit "Качи" %>
+  <% end %>
+</div>

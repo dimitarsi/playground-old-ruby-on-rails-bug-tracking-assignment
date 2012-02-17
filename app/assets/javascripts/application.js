@@ -7,3 +7,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+function replace_file(e,f_id) {
+  if(e && e.preventDefault) e.preventDefault();
+  //Imeplementing Ajax Request
+  return false;
+}

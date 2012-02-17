@@ -5,3 +5,28 @@
  *= require_self
  *= require_tree . 
 */
+
+body{margin:0;paddiong:0;font:13px Tahoma,Arial,sans-serif}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+ul{margin:0;padding:0}
+ul,li {list-style-type:none}
+ul.center_list{margin:50px auto;width:800px}
+ul.center_list li{background:#ccc;padding:10px;border-top:1px solid #464646;border-bottom:1px solid #d7d7d7;position:relative;float:left;width:100%;height:24px;line-height:25px}
+ul.center_list li img{position:absolute;left:5px;top:-1px}
+
+ul.center_list a{padding:0 0 0 35px;float:left;width:200px;overflow:hidden;height:24px;position:relative;}
+ul.center_list a.upd{width:90px;height:24px;}
+
+
+.top_links{background:#e5ffae;}
+.links_wrapper{width:800px;margin:10px auto;padding:16px 0}
+.top_links a{float:left;color:#444;text-decoration:none;text-transform:uppercase;font-weight:700}
+.top_links a:hover{color:#ff0000}
+.top_links .sep{float:left;margin:0 5px}
+
+.clr{clear:both}
+
+
+.form_wrapper{width:800px;margin:0 auto}
+
+.alert{color:#00a6ba;font-size:16px;font-weight:700}

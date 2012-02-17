@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>Upall</title>
@@ -14,6 +14,19 @@
 <body>
 
 <h1><a href="/">Welcome To Up'em All</a></h1>
+
+<% if session[:user] %>
+  <div class="top_links">
+    <div class="links_wrapper">
+      <%= link_to "Изход", login_signout_path %>
+      <span class="sep">|</span>
+      <%= link_to "Всички файлове", documents_arhive_path %>
+      <span class="sep">|</span>
+      <%= link_to "Мойте файлове", users_path %>
+      <div class="clr"></div>
+    </div>
+  </div>
+<% end %>
 
 <%= yield %>
 

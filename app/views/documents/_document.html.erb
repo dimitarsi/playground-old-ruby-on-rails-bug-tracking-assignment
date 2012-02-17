@@ -1,0 +1,17 @@
+<li>
+  <a href="<%= document.url %>" target="_blank">
+    <img class="upld" src="/assets/download.png" width="26px" />
+    <%= document.name %>
+  </a>
+  <% if session[:user].id == document.user.id %>
+  <a href="#" class="upd" onclick="replace_file(event,'<%= document.id %>')">
+    <img src="assets/update.png" title="промени" />
+    промени
+  </a>
+
+  <a class="rem" href="<%= documents_destroy_path(document) %>">
+    <img src="/assets/remove.png" title="премахни" />
+    премахни
+  </a>
+  <% end %>
+</li>
