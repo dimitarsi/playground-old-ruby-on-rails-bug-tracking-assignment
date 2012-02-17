@@ -1,27 +1,33 @@
-﻿<% flash.each do |f| %>
+﻿<div class="form_wrapper">
+<% flash.each do |f,msg| %>
   <strong style="color:#ff0000">
-    <%= f %>
+    <%= msg %>
   </strong><br />
 <% end %>
+</div>
 
-<% session.each do |f| %>
-  <strong style="color:#00ff00">
-    <%= f %>
-  </strong><br />
-<% end %>
+<div class="top_links">
+  <div class="links_wrapper">
+    <%= link_to 'Нямате регистрация?', login_register_path %>
+    <div class="clr"></div>
+  </div>
+</div>
 
-
-<strong>Вход<strong>
-<%= form_tag(users_authenticate_path) do |f| %>
-  
-  <%= label_tag :uname ,'Ime:' %>
-  <%= text_field_tag :uname %><br />
-  <br />
-  <%= label_tag :uname ,'Parola:' %>
-  <%= password_field_tag :upass %><br />
-  
+<div class="form_wrapper">
+  <strong>Вход<strong>
+  <%= form_tag(users_authenticate_path) do |f| %>
+    <p>
+      <%= label_tag :uname ,'Ime:' %>
+      <%= text_field_tag :uname %><br />
+      <div class="clr"></div>
+    </p><p>
+      <%= label_tag :uname ,'Parola:' %>
+      <%= password_field_tag :upass %><br />
+      <div class="clr"></div>
+    </p>
+    
   <%= submit_tag 'Sing In' %>
   
 <% end %>
-<br />
-<%= link_to 'Нямате регистрация?', login_register_path %>
+
+</div>

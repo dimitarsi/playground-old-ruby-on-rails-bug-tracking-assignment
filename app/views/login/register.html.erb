@@ -1,19 +1,26 @@
 ﻿<% if flash[:reg_fail] %>
   <%= flash[:reg_fail] %>
 <% end %>
-<%= form_for(@user) do |f| %>
-  
-  <%= f.label :name, 'Потребителско име' %>
-  <%= f.text_field :name %> <br />
-  
-  <%= f.label :password, 'Парола' %>
-  <%= f.password_field :password %><br />
 
-  <%= f.label :password_confirmation, 'Потвърди паролата' %>
-  <%= f.password_field :password_confirmation %>
-  
-  <br />
-  
-  <%= submit_tag 'Регистрирай се' %>
-  
-<% end %>
+<div class="form_wrapper">
+  <strong>Регистрирай се!</strong>
+  <%= form_for(@user) do |f| %>
+    <p>
+      <%= f.label :name, 'Потребителско име' %>
+      <%= f.text_field :name %> <br />
+      <div class="clr"></div>
+    </p>
+    <p>
+      <%= f.label :password, 'Парола' %>
+      <%= f.password_field :password %><br />
+      <div class="clr"></div>
+    </p>
+    <p>
+      <%= f.label :password_confirmation, 'Потвърди паролата' %>
+      <%= f.password_field :password_confirmation %>
+      <div class="clr"></div>
+    </p>
+    <%= submit_tag 'Регистрирай се' %>
+    
+  <% end %>
+</div>

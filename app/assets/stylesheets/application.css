@@ -6,7 +6,7 @@
  *= require_tree . 
 */
 
-body{margin:0;paddiong:0;font:13px Tahoma,Arial,sans-serif}
+body{margin:0;paddiong:0;font:13px Tahoma,Arial,sans-serif;height:100%;position:relative;}
 h1,h2,h3,h4,h5,h6{font-size:100%;}
 ul{margin:0;padding:0}
 ul,li {list-style-type:none}
@@ -26,7 +26,11 @@ ul.center_list a.upd{width:90px;height:24px;}
 
 .clr{clear:both}
 
+form label {float:left;width:150px}
+form input[type=text],form input[type=password]{float:left;width:220px}
 
 .form_wrapper{width:800px;margin:0 auto}
 
 .alert{color:#00a6ba;font-size:16px;font-weight:700}
+
+.footer{padding:50px 0;text-align:center;color:#fff;font-size:16px;background:#444;margin:50px 0 0;clear:both;float:left;width:100%;postion:relative;bottom:0}
